@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 
 const Flat = ({ flat }) => {
-  console.log(flat)
   return (
   <div>
     <h1>{flat.title}</h1>

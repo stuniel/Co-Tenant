@@ -11,6 +11,7 @@
     "marked": "^0.3.12",
     "materialize-css": "^0.100.2",
     "mongoose": "^5.0.0-rc2",
+    "normalize.css": "^7.0.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

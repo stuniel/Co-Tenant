@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 
-const NavbarItem = ({ item }) => {
+const NavbarItem = ({ item, float }) => {
   const { label, to } = item;
 
   return (
-    <Link to={to}>
-      <li>
-        {label}
-      </li>
-    </Link>
+    <li className={`NavbarItem ${float}`}>
+      <Link to={to}>
+          {label}
+      </Link>
+    </li>
   )
 }
 

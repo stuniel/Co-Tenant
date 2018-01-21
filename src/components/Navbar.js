@@ -7,7 +7,7 @@ class Navbar extends React.Component {
       return React.cloneElement(child, {})
     })
     return (
-      <ul>
+      <ul className='Navbar'>
         {children}
       </ul>
     )

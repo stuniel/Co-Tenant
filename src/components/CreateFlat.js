@@ -46,7 +46,6 @@ class CreateFlat extends React.Component {
   }
 
   render() {
-    console.log(amenities)
     return (
       <form onSubmit={ this.handleSubmit }>
         <Input

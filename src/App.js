@@ -16,8 +16,6 @@ import SignUp from './components/SignUp';
 
 import { navItems } from './data/listing';
 
-import './css/style.css';
-
 
 class App extends React.Component {
   state = {
@@ -49,12 +47,12 @@ class App extends React.Component {
       <Router>
         <div>
           <Navbar>
-            <NavbarItem item={ {label:'home', to:'/'} } />
+            <NavbarItem item={ {label:'home', to:'/'} } float='left' />
             {navItems.map(item => (
-              <NavbarItem key={item.label} item={item} />
+              <NavbarItem key={item.label} item={item} float='right' />
             ))}
           </Navbar>
-          
+
           <Switch>
             <Route exact path="/" render={() => <Home data={ data } />} />
             <Route path="/add-a-flat" render={() => <AddFlat handleCommentSubmit={this.handleCommentSubmit} />}/>
