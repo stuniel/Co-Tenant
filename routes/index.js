@@ -15,7 +15,7 @@ router.route('/flats')
    });
  })
  .post(function(req, res) {
-   var flat = new Flat();
+   const flat = new Flat();
    flat.title = req.body.title;
    flat.location = req.body.location;
    flat.price = req.body.price;

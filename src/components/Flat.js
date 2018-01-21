@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const Flat = ({ flat }) => {
   console.log(flat)
@@ -6,13 +8,15 @@ const Flat = ({ flat }) => {
   <div>
     <h1>{flat.title}</h1>
     <span>{flat.location}</span><br/>
-  <span>{`$${flat.price}`}</span><br/>
+    <span>{`$${flat.price}`}</span><br/>
     {flat.amenities.map((amenity) => (
-      <h3>{amenity}</h3>
+      <h3 key={amenity}>{amenity}</h3>
     ))}
   </div>
 )}
 
-
+Flat.propTypes = {
+  flat: PropTypes.object.isRequired,
+}
 
 export default Flat;

@@ -1,7 +1,11 @@
 import React from 'react';
-import Input from './Input';
+import PropTypes from 'prop-types';
+
 import Checkbox from './Checkbox';
+import Input from './Input';
+
 import { amenities } from '../data/listing';
+
 
 class CreateFlat extends React.Component {
   state = {
@@ -77,6 +81,10 @@ class CreateFlat extends React.Component {
       </form>
     )
   }
+}
+
+CreateFlat.propTypes = {
+  onCommentSubmit: PropTypes.func.isRequired,
 }
 
 export default CreateFlat;

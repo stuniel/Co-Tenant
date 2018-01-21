@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Flat from './Flat';
+
 
 const Flats = ({data}) => {
   console.log(data)
@@ -10,6 +13,10 @@ const Flats = ({data}) => {
       flat={flat}
     />
   ))}
+}
+
+Flats.propTypes = {
+  data: PropTypes.array.isRequired,  
 }
 
 export default Flats;
