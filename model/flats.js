@@ -14,7 +14,8 @@ var FlatsSchema = new Schema({
    type: Number,
    required: 'Please enter a price!'
  },
- amenities: [String]
+ amenities: [String],
+ image: String,
 });
 
 module.exports = mongoose.model('Flat', FlatsSchema);

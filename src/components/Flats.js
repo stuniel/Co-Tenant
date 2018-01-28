@@ -5,13 +5,19 @@ import Flat from './Flat';
 
 
 const Flats = ({data}) => {
-  if(!data && data.length === 0) return null
-  else {return data.map(flat => (
+  const flats = data.map(flat => (
     <Flat
       key={flat['_id']}
       flat={flat}
     />
-  ))}
+  ))
+  return (
+    <div className="col s12 m6 l6">
+      <div className="row">
+        {flats}
+      </div>
+    </div>
+  )
 }
 
 Flats.propTypes = {

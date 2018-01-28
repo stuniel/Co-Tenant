@@ -1,5 +1,10 @@
-$primary-color: #eee;
-$lighter-color: darken( $primary-color, 10% );
+@import './node_modules/materialize-css/sass/materialize';
+
+$primary-color: #f5f5f5;
+$lighter-color: lighten( $primary-color, 3% );
+$darker-color: darken( $primary-color, 3% );
+
+$border-radius: 4px;
 
 * {
   box-sizing: border-box;
@@ -8,6 +13,15 @@ $lighter-color: darken( $primary-color, 10% );
 
 body {
   margin: 0;
+  background-color: $lighter-color;
+}
+
+.Flat {
+  width: 30%;
+  height: 300px;
+  margin: 1.55%;
+  background-color: $primary-color;
+  float: left;
 }
 
 .Navbar {
@@ -18,13 +32,9 @@ body {
   background-color: $primary-color;
 }
 
-.NavbarItem {
-  float: left;
-}
-
 .NavbarItem a {
   display: block;
-  color: inherit;
+  color: black;
   text-transform: capitalize;
   text-align: center;
   padding: 14px 16px;
@@ -32,9 +42,48 @@ body {
 }
 
 .NavbarItem a:hover {
-  background-color: $lighter-color;
+  background-color: $darker-color;
+}
+
+.left {
+  float: left;
 }
 
 .right {
   float: right;
+}
+
+.card-medium {
+  @extend .card;
+  border-radius: $border-radius;
+  height: 300px;
+}
+
+.card-large {
+  @extend .card;
+  border-radius: 0;
+  height: 600px;
+}
+
+a {
+  color: black;
+}
+
+.card-image-medium {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-content-medium {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  padding: 16px;
+}
+
+.card-header {
+  font-size: 20px;
 }

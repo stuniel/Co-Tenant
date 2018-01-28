@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Flats from './Flats';
+import Map from './Map';
 
 
 const Home = ({ data }) => {
   return (
-    <div>
+    <div className="row">
       <Flats data={data}/>
+      <Map />
     </div>
   )
 }

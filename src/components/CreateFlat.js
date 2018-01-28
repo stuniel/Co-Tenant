@@ -12,6 +12,7 @@ class CreateFlat extends React.Component {
     title: '',
     location: '',
     price: '',
+    image: '',
     amenities: [],
   }
 
@@ -35,13 +36,14 @@ class CreateFlat extends React.Component {
     let title = this.state.title.trim();
     let location = this.state.location.trim();
     let price = this.state.price;
+    let image = this.state.image;
     let amenities = this.state.amenities;
-    if (!title || !location || !price) {
+    if (!title || !location || !price || !image) {
       alert('missing data')
       return;
     }
-    this.props.onCommentSubmit({ title, location, price, amenities });
-    this.setState({ title: '', location: '', price: '', amenities: [] });
+    this.props.onCommentSubmit({ title, location, price, image, amenities });
+    this.setState({ title: '', location: '', price: '', image: '', amenities: [] });
     console.log('data sent')
   }
 
@@ -66,6 +68,13 @@ class CreateFlat extends React.Component {
           label='price'
           onChange={ this.handleInputChange }
           value={this.state.price}
+        />
+        <Input
+          type='text'
+          placeholder='Insert photo url'
+          label='image'
+          onChange={ this.handleInputChange }
+          value={this.state.photo}
         />
         {amenities.map((label, index) => (
           <Checkbox

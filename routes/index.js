@@ -20,6 +20,7 @@ router.route('/flats')
    flat.location = req.body.location;
    flat.price = req.body.price;
    flat.amenities = req.body.amenities;
+   flat.image = req.body.image;
    flat.save(function(err) {
      if (err)
      res.send(err);

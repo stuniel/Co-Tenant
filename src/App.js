@@ -8,7 +8,9 @@ import axios from 'axios';
 
 import AddFlat from './components/AddFlat';
 import Home from './components/Home';
+import Listing from './components/Listing';
 import LogIn from './components/LogIn';
+import LandingRoute from './components/LandingRoute';
 import Navbar from './components/Navbar';
 import NavbarItem from './components/NavbarItem';
 import NoMatch from './components/NoMatch';
@@ -22,7 +24,7 @@ class App extends React.Component {
     data: []
   };
 
-  componentDidMount() {
+  componentWillMount() {
     axios.get('http://localhost:3001/api/flats')
       .then(res => {
         this.setState({ data: res.data });
@@ -58,6 +60,9 @@ class App extends React.Component {
             <Route path="/add-a-flat" render={() => <AddFlat handleCommentSubmit={this.handleCommentSubmit} />}/>
             <Route path="/sign-up" component={SignUp}/>
             <Route path="/log-in" component={LogIn}/>
+            <LandingRoute path="/flats/:flatId" data={this.state.data}>
+              <Listing />
+            </LandingRoute>
             <Route component={NoMatch}/>
           </Switch>
 
